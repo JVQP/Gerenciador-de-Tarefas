@@ -27,11 +27,12 @@ const sqlite = require('sqlite3')
 //// CONFIGURAÇÕES /////
 
 const db = new sqlite.Database("Database.sqlite", (err) => {
-    if (!err) console.log("Conexão com sucesso!")
+    if (!err) console.log("Conexão ao banco com sucesso!")
     else console.log("Erro ao conectar ao banco")
 });
 
 // ------ CRIANDO BANCO DE DADOS SQLITE ------ {
+
 
 function criar() {
     const query = `
@@ -67,7 +68,7 @@ function criar2() {
 
     db.run(query, (err) => {
         if (!err) console.log("Tabela tarefas criada com sucesso!");
-        else console.log("Erro ao criar a tabela!")
+        else console.log("Erro ao criar a tabela tarefas!", err.message)
     })
 
 
@@ -75,11 +76,12 @@ function criar2() {
 
 
 function drop() {
-    db.run("DROP TABLE usuarios", (err) => {
+    db.run("DROP TABLE tarefas", (err) => {
         if (!err) console.log("Tabela usuarios exluida!");
         else console.log("Ero ao excluir tabela!")
     })
 }
+
 
 function DELETE() {
     db.run("DELETE FROM usuarios", (err) => {
