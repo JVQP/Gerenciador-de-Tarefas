@@ -84,7 +84,7 @@ function drop() {
 
 
 function DELETE() {
-    db.run("DELETE FROM usuarios", (err) => {
+    db.run("DELETE FROM usuarios WHERE id = 16", (err) => {
         if (!err) console.log("Dados da tabela removidos!");
         else console.log("Erro ao executar o comando SQL", err.message);
     })
