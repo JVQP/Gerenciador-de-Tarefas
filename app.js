@@ -4,6 +4,8 @@ const { engine } = require('express-handlebars')
 const mysql = require('mysql2');
 const sqlite = require('sqlite3')
 
+const PORT = 8080;
+
 ///////// CONEXÃO COM O BANCO DE DADOS MYSQL /////////////
 
 /*const db = mysql.createConnection({
@@ -451,6 +453,6 @@ app.get('/pesquisa', function (req, res) {
 
 ////// ROTA DO SERVIDOR ////
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log("Servidor rodando: http://localhost:8080/");
 })
