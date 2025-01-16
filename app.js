@@ -4,7 +4,7 @@ const { engine } = require('express-handlebars')
 const mysql = require('mysql2');
 const sqlite = require('sqlite3')
 
-const PORT = 8080;
+const PORT = process.env.BASE_URL || 8080;
 
 ///////// CONEXÃO COM O BANCO DE DADOS MYSQL /////////////
 
